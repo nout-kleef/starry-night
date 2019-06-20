@@ -1,6 +1,6 @@
 // specify build variables
 const SRC = "./src/";
-const DIST = "./src/";
+const DIST = "./dist/";
 const PACKAGE_NAME = "starry-night";
 
 // require modules
