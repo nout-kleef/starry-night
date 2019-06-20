@@ -1,0 +1,31 @@
+{
+  "name": "starry-night",
+  "version": "0.1.0",
+  "description": "Simulation of a star-filled sky using JS and CSS, to be used as a background",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'No test defined'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nout-kleef/starry-night.git"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "simulation",
+    "star",
+    "stars",
+    "background",
+    "animation",
+    "art",
+    "web",
+    "webdevelopment"
+  ],
+  "author": "Nout Kleef",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nout-kleef/starry-night/issues"
+  },
+  "homepage": "https://github.com/nout-kleef/starry-night#readme"
+}
