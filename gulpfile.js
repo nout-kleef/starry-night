@@ -1,6 +1,7 @@
 // specify build variables
 const SRC = "./src/";
 const DIST = "./dist/";
+const NODE = "./node_modules/";
 const PACKAGE_NAME = "starry-night";
 
 // require modules
@@ -34,7 +35,11 @@ function build(cb) {
         .src(SRC + "js/demo/" + PACKAGE_NAME + "-sample.js")
         .pipe(gulp.dest(DIST));
     gulp // source files
-        .src(SRC + "js/*.js")
+        .src([
+            NODE + "p5/lib/p5.js",
+            NODE + "p5/lib/addons/p5.dom.js",
+            SRC + "js/*.js"
+        ])
         .pipe(sourcemaps.init())
         .pipe(concat(PACKAGE_NAME + ".min.js"))
         .pipe(uglify())
