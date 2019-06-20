@@ -43,6 +43,15 @@ function build(cb) {
     cb();
 }
 
+function watch(cb) {
+    gulp
+        .watch(SRC + "**/*", build);
+    cb();
+}
+
 // export tasks
+const launch = gulp.series(build, watch);
 exports.build = build;
-exports.default = build;
+exports.watch = watch;
+exports.launch = launch;
+exports.default = launch;
