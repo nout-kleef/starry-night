@@ -10,11 +10,19 @@ const sourcemaps = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const concat = require("gulp-concat");
 // const cleanCSS = require("gulp-clean-css");
+const del = require("del");
 const uglify = require("gulp-uglify-es").default;
 // const LessAutoPrefix = require("less-plugin-autoprefix");
 // const autoprefix = new LessAutoPrefix({
 //     browsers: ["last 2 versions"]
 // });
+
+// cleanup
+function clean(cb) {
+    // delete all existing assets and html to prevent caching issues
+    del(DIST + "*");
+    cb();
+}
 
 // specify tasks
 function build(cb) {
@@ -59,7 +67,8 @@ function watch(cb) {
 }
 
 // export tasks
-const launch = gulp.series(build, watch);
+const noCacheBuild = gulp.series(clean, build);
+const launch = gulp.parallel(noCacheBuild, watch);
 exports.build = build;
 exports.watch = watch;
 exports.launch = launch;
