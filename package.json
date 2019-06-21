@@ -1,6 +1,6 @@
 {
   "name": "@nout-kleef/starry-night",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Simulation of a star-filled sky using JS and CSS, to be used as a background",
   "main": "index.js",
   "scripts": {
