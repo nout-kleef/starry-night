@@ -21,3 +21,4 @@ class Star {
 Star.imgSize = 6;
 Star.spritePath = "stars-sprite-" + Star.imgSize + ".png";
 Star.sprite;
+Star.bgColor = [22, 26, 29];
