@@ -22,6 +22,10 @@ function build(cb) {
     gulp
         .src(SRC + "index.html")
         .pipe(gulp.dest(DIST));
+    // move images
+    gulp
+        .src(SRC + "img/**/*.png")
+        .pipe(gulp.dest(DIST));
     // combine/compile and move less files
     gulp
         .src(SRC + "less/index.less")
