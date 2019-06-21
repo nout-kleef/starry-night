@@ -23,7 +23,7 @@ function setup() {
 function draw() {
     const w = windowWidth;
     const h = windowHeight;
-    background(130);
+    background(22, 26, 29);
     for (let i = 0; i < stars.length; i++) {
         stars[i].show(w, h);
     }

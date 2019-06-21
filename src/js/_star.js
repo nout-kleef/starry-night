@@ -18,6 +18,6 @@ class Star {
 }
 
 // dimensions of an individual star image in stars-sprite.png
-Star.imgSize = 12;
-Star.spritePath = "stars-sprite.png";
+Star.imgSize = 6;
+Star.spritePath = "stars-sprite-" + Star.imgSize + ".png";
 Star.sprite;
