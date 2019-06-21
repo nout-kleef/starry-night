@@ -3,9 +3,17 @@ body {
     background-color: @color-background;
     color: @color-text;
     padding: 50px;
+    z-index: -1;
 
     .content {
         color: @color-content-text;
         background-color: @color-content-background;
+        margin-top: 100px;
+
+        &:before,
+        &:after {
+            content: ' ';
+            display: table;
+        }
     }
 }
