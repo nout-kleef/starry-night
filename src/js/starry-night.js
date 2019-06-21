@@ -11,7 +11,7 @@ function preload() {
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
-    canvas.style("z-index", "0");
+    canvas.style("z-index", "-1");
     canvas.style("position", "fixed");
     // handle sprite
     Star.sprite.loadPixels();
