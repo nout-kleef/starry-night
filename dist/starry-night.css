@@ -1,5 +1,5 @@
 .starry-night {
-  background-color: #333333;
+  background-color: #1f2428;
   color: #fff;
   padding: 50px;
 }
@@ -9,7 +9,7 @@
 .starry-night > header,
 .starry-night > footer {
   margin: 50px;
-  background-color: #4e4e4e;
+  background-color: #292f33;
   color: #fff;
 }
 
