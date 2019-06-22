@@ -11,7 +11,7 @@ class Star {
         this.brightness = 0;
         // different starts for individual stars
         this.noiseX = Math.random() * 10;
-        this.noiseSpeed = 0.05 + Math.random() * 0.04;
+        this.noiseSpeed = 0.05 + Math.random() * 0.025;
         this.displayDimensions = Star.imgSize / this.z;
     }
 
