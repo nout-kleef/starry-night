@@ -62,6 +62,8 @@ class Star {
     }
 }
 
+// how many stars do we want
+Star.populationSize = 30;
 // dimensions of an individual star image in stars-sprite.png
 Star.imgSize = 12;
 // decide how to render a star based on these minimum dimension requirements
@@ -81,3 +83,4 @@ Star.spriteReplacements = [
 ];
 Star.bgColor = [22, 26, 29];
 Star.parallaxMultiplier = 0.2;
+Star.DEBUG = true;

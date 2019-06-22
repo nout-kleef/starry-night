@@ -2,7 +2,6 @@ let canvas;
 let stars = [];
 let starTypes, starColors;
 let documentScrollPosition;
-const STARRY_NIGHT_DEBUG = true;
 
 function preload() {
     Star.sprite = loadImage(Star.spritePath);
@@ -18,7 +17,7 @@ function setup() {
     Star.sprite.loadPixels();
     starTypes = Math.floor(Star.sprite.width / Star.imgSize);
     starColors = Math.floor(Star.sprite.height / Star.imgSize);
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < Star.populationSize; i++) {
         stars.push(new Star());
     }
     // frameRate(60);
@@ -34,7 +33,7 @@ function draw() {
         stars[i].update();
         stars[i].show(w, h);
     }
-    if (STARRY_NIGHT_DEBUG) {
+    if (Star.DEBUG) {
         fill(255);
         textSize(32);
         text(Math.round(frameRate()), 10, 50);
