@@ -1,10 +1,17 @@
 class Star {
-    constructor() {
+    constructor(height) {
         const type = Math.floor(Math.random() * starTypes);
         const color = Math.floor(Math.random() * starColors);
         this.imgColor = Star.spriteReplacements[color];
         this.x = Math.random();
-        this.y = Math.random();
+        if (typeof height === "undefined") {
+            this.toBeReplaced = true; // only replace initial population
+            this.y = Math.random();
+        } else {
+            this.y = height + Math.random() *
+                Star.stopRenderingThreshold - Star.stopRenderingThreshold / 2;
+            this.toBeReplaced = false;
+        }
         this.z = 1 + Math.random() * 5; // for parallax scrolling
         this.spriteX = type * Star.imgSize;
         this.spriteY = color * Star.imgSize;
@@ -16,6 +23,7 @@ class Star {
     }
 
     show(w, h) {
+        if (this.y < -10 || this.y + 10 > windowHeight) return;
         // only render pictures if we absolutely need to:
         if (this.displayDimensions >= Star.imageThreshold) {
             // render as image
@@ -59,17 +67,26 @@ class Star {
 
     updatePositionPostScroll(relativeIncrease) {
         this.y -= relativeIncrease * Star.parallaxMultiplier / this.z;
+        if (!this.toBeReplaced) return;
+        if (this.y < Star.SCREEN_TOP) {
+            if (Star.DEBUG) console.info("adding new star at bottom");
+            stars.push(new Star(Star.SCREEN_BOTTOM));
+            this.toBeReplaced = false;
+        } else if (this.y > Star.SCREEN_BOTTOM) {
+            if (Star.DEBUG) console.info("adding new star at top");
+            stars.push(new Star(Star.SCREEN_TOP));
+            this.toBeReplaced = false;
+        }
     }
 }
 
-// how many stars do we want
-Star.populationSize = 30;
 // dimensions of an individual star image in stars-sprite.png
 Star.imgSize = 12;
 // decide how to render a star based on these minimum dimension requirements
 Star.imageThreshold = 5;
 Star.ellipseThreshold = 2.2;
 Star.rectangleThreshold = 1.5;
+Star.stopRenderingThreshold = 0.02;
 Star.spritePath = "stars-sprite-" + Star.imgSize + ".png";
 Star.sprite;
 // estimated characteristic color for each respective star color
@@ -84,3 +101,5 @@ Star.spriteReplacements = [
 Star.bgColor = [22, 26, 29];
 Star.parallaxMultiplier = 0.2;
 Star.DEBUG = true;
+Star.SCREEN_BOTTOM = 1 + Star.stopRenderingThreshold;
+Star.SCREEN_TOP = -Star.stopRenderingThreshold;

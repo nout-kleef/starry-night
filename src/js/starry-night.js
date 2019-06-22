@@ -8,6 +8,7 @@ function preload() {
 }
 
 function setup() {
+    // set up canvas for p5.js
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
     canvas.style("z-index", "-1");
@@ -17,10 +18,11 @@ function setup() {
     Star.sprite.loadPixels();
     starTypes = Math.floor(Star.sprite.width / Star.imgSize);
     starColors = Math.floor(Star.sprite.height / Star.imgSize);
-    for (let i = 0; i < Star.populationSize; i++) {
+    // create stars
+    const populationSize = windowWidth * windowHeight / 14000;
+    for (let i = 0; i < populationSize; i++)
         stars.push(new Star());
-    }
-    // frameRate(60);
+    // handle parallax scrolling
     documentScrollPosition = getScrollPosition();
     window.onscroll = handleStarryNightScroll;
 }
