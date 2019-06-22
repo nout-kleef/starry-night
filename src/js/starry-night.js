@@ -22,7 +22,7 @@ function setup() {
     }
     // frameRate(60);
     documentScrollPosition = getScrollPosition();
-    window.onscroll = handleStarrNightScroll;
+    window.onscroll = handleStarryNightScroll;
 }
 
 function draw() {
@@ -48,7 +48,7 @@ function getScrollPosition() {
     return document.documentElement.scrollTop || document.body.scrollTop;
 }
 
-function handleStarrNightScroll() {
+function handleStarryNightScroll() {
     const newScrollPosition = getScrollPosition();
     const relativeIncrease = (newScrollPosition - documentScrollPosition) / windowHeight;
     for (let i = 0; i < stars.length; i++) {
