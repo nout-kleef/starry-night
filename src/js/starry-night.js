@@ -13,12 +13,13 @@ function setup() {
     canvas.position(0, 0);
     canvas.style("z-index", "-1");
     canvas.style("position", "fixed");
+    ellipseMode(CORNER);
     // handle sprite
     Star.sprite.loadPixels();
     starTypes = Math.floor(Star.sprite.width / Star.imgSize);
     starColors = Math.floor(Star.sprite.height / Star.imgSize);
     for (let i = 0; i < 50; i++) {
-        stars.push(new Star(i % 2 === 0));
+        stars.push(new Star());
     }
     // frameRate(60);
     documentScrollPosition = getScrollPosition();
