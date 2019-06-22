@@ -18,7 +18,7 @@ function setup() {
     starTypes = Math.floor(Star.sprite.width / Star.imgSize);
     starColors = Math.floor(Star.sprite.height / Star.imgSize);
     for (let i = 0; i < 50; i++) {
-        stars.push(new Star());
+        stars.push(new Star(i % 2 === 0));
     }
     // frameRate(60);
     documentScrollPosition = getScrollPosition();
@@ -30,6 +30,7 @@ function draw() {
     const h = windowHeight;
     background(Star.bgColor[0], Star.bgColor[1], Star.bgColor[2]);
     for (let i = 0; i < stars.length; i++) {
+        stars[i].update();
         stars[i].show(w, h);
     }
     if (STARRY_NIGHT_DEBUG) {

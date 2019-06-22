@@ -7,18 +7,27 @@ class Star {
         this.z = 1 + Math.random() * 5; // for parallax scrolling
         this.spriteX = type * Star.imgSize;
         this.spriteY = color * Star.imgSize;
+        this.brightness = 0;
+        // different starts for individual stars
+        this.noiseX = Math.random() * 10;
+        this.noiseSpeed = Math.random() * 0.03;
     }
 
     show(w, h) {
         const SIZE = Star.imgSize;
+        tint(255, this.brightness);
         image(Star.sprite,
             this.x * w, this.y * h, SIZE / this.z, SIZE / this.z,
             this.spriteX, this.spriteY, SIZE, SIZE
         );
     }
 
-    updatePositionPostScroll(relativeIncrease) {
+    update() {
+        this.noiseX += this.noiseSpeed;
+        this.brightness = noise(this.noiseX) * 255;
+    }
 
+    updatePositionPostScroll(relativeIncrease) {
         this.y -= relativeIncrease * Star.parallaxMultiplier / this.z;
     }
 }
