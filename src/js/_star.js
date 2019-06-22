@@ -1,7 +1,7 @@
 class Star {
     constructor(height) {
-        const type = Math.floor(Math.random() * starTypes);
-        const color = Math.floor(Math.random() * starColors);
+        const type = Math.floor(Math.random() * Star.types);
+        const color = Math.floor(Math.random() * Star.colors);
         this.imgColor = Star.spriteReplacements[color];
         this.x = Math.random();
         if (typeof height === "undefined") {
@@ -70,11 +70,11 @@ class Star {
         if (!this.toBeReplaced) return;
         if (this.y < Star.SCREEN_TOP) {
             if (Star.DEBUG) console.info("adding new star at bottom");
-            stars.push(new Star(Star.SCREEN_BOTTOM));
+            Star.population.push(new Star(Star.SCREEN_BOTTOM));
             this.toBeReplaced = false;
         } else if (this.y > Star.SCREEN_BOTTOM) {
             if (Star.DEBUG) console.info("adding new star at top");
-            stars.push(new Star(Star.SCREEN_TOP));
+            Star.population.push(new Star(Star.SCREEN_TOP));
             this.toBeReplaced = false;
         }
     }
@@ -89,6 +89,8 @@ Star.rectangleThreshold = 1.5;
 Star.stopRenderingThreshold = 0.02;
 Star.spritePath = "stars-sprite-" + Star.imgSize + ".png";
 Star.sprite;
+Star.types;
+Star.colors;
 // estimated characteristic color for each respective star color
 Star.spriteReplacements = [
     [232, 175, 4],
@@ -100,6 +102,8 @@ Star.spriteReplacements = [
 ];
 Star.bgColor = [22, 26, 29];
 Star.parallaxMultiplier = 0.2;
+Star.populationSize;
+Star.population = [];
 Star.DEBUG = false;
 Star.SCREEN_BOTTOM = 1 + Star.stopRenderingThreshold;
 Star.SCREEN_TOP = -Star.stopRenderingThreshold;
