@@ -100,6 +100,6 @@ Star.spriteReplacements = [
 ];
 Star.bgColor = [22, 26, 29];
 Star.parallaxMultiplier = 0.2;
-Star.DEBUG = true;
+Star.DEBUG = false;
 Star.SCREEN_BOTTOM = 1 + Star.stopRenderingThreshold;
 Star.SCREEN_TOP = -Star.stopRenderingThreshold;
