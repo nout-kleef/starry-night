@@ -8,9 +8,11 @@ function preload() {
 function setup() {
     // set up canvas for p5.js
     canvas = createCanvas(windowWidth, windowHeight);
-    canvas.position(0, 0);
-    canvas.style("z-index", "-1");
-    canvas.style("position", "fixed");
+    // canvas.position(0, 0);
+    canvas.elt.style.zIndex = "-1";
+    canvas.elt.style.position = "fixed";
+    canvas.elt.style.left = "0";
+    canvas.elt.style.top = "0";
     ellipseMode(CORNER);
     // handle sprite
     Star.sprite.loadPixels();

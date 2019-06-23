@@ -49,7 +49,6 @@ function build(cb) {
     gulp // source files
         .src([
             NODE + "p5/lib/p5.js",
-            NODE + "p5/lib/addons/p5.dom.js",
             SRC + "js/*.js"
         ])
         .pipe(sourcemaps.init())
