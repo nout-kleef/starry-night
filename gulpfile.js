@@ -47,10 +47,7 @@ function build(cb) {
         .src(SRC + "js/demo/" + PACKAGE_NAME + "-sample.js")
         .pipe(gulp.dest(DIST));
     gulp // source files
-        .src([
-            NODE + "p5/lib/p5.js",
-            SRC + "js/*.js"
-        ])
+        .src(SRC + "js/*.js")
         .pipe(sourcemaps.init())
         .pipe(concat(PACKAGE_NAME + ".min.js"))
         .pipe(uglify())

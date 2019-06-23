@@ -35,8 +35,5 @@
     "gulp-less": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify-es": "^1.0.4"
-  },
-  "dependencies": {
-    "p5": "^0.8.0"
   }
 }
