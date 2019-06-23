@@ -18,7 +18,7 @@ class Star {
         this.brightness = 0;
         // different starts for individual stars
         this.noiseX = Math.random() * 10;
-        this.noiseSpeed = 0.05 + Math.random() * 0.025;
+        this.noiseSpeed = 0.01 + Math.random() * 0.035;
         this.displayDimensions = Star.imgSize / this.z;
     }
 
@@ -83,7 +83,7 @@ class Star {
 // dimensions of an individual star image in stars-sprite.png
 Star.imgSize = 12;
 // decide how to render a star based on these minimum dimension requirements
-Star.imageThreshold = 5;
+Star.imageThreshold = 4.5;
 Star.ellipseThreshold = 2.2;
 Star.rectangleThreshold = 1.5;
 Star.stopRenderingThreshold = 0.02;
