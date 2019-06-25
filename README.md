@@ -16,9 +16,11 @@ You can find a demo of this module by navigating your browser to `./dist/index.h
     <i>to prevent the possibility of including p5.js twice, you must include it as a separate script (if you're not using it already)</i>
 ## load starry-night using JsDelivr CDN
 2) add `<script src="https://cdn.jsdelivr.net/npm/@nout-kleef/starry-night@2/dist/starry-night.min.js"></script>` to your html page's `<head>`
+3) load `https://cdn.jsdelivr.net/npm/@nout-kleef/starry-night@2/dist/stars-sprite-12.png`, which holds the stars' images
 ## load starry-night using local file
-2) add `node_modules/@nout-kleef/starry-night/dist/starry-night.min.js` as a script to your html page's `<head>`<br>
-    <i>note: you should probably move this script from `node_modules` to your `public_html` folder first, using Gulp, Grunt etc.</i>
+<i>note: you should probably move these files from `node_modules` to your `public_html` folder first, using Gulp, Grunt etc.</i>
+2) add `node_modules/@nout-kleef/starry-night/dist/starry-night.min.js` as a script to your html page's `<head>`
+3) copy/load `node_modules/@nout-kleef/starry-night/dist/stars-sprite-12.png`
 
 # development usage
 1) `npm install` or `sudo npm install`
