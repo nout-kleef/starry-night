@@ -25,6 +25,11 @@ function setup() {
     // handle parallax scrolling
     documentScrollPosition = getScrollPosition();
     window.onscroll = handleStarryNightScroll;
+    /* (nearly) all devices will be able to handle 35 fps, so setting this
+     * as the maximum fps ensures similar looking flickering on different
+     * devices
+     */
+    frameRate(35);
 }
 
 function draw() {

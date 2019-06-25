@@ -65,7 +65,7 @@ function watch(cb) {
 // export tasks
 const noCacheBuild = gulp.series(clean, build);
 const launch = gulp.parallel(noCacheBuild, watch);
-exports.build = build;
+exports.build = noCacheBuild;
 exports.watch = watch;
 exports.launch = launch;
 exports.default = launch;
