@@ -87,7 +87,7 @@ Star.imageThreshold = 4.5;
 Star.ellipseThreshold = 2.2;
 Star.rectangleThreshold = 1.5;
 Star.stopRenderingThreshold = 0.02;
-Star.spritePath = "stars-sprite-" + Star.imgSize + ".png";
+Star.spritePath = "img/stars-sprite-" + Star.imgSize + ".png";
 Star.sprite;
 Star.types;
 Star.colors;

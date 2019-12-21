@@ -9,17 +9,11 @@ const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const concat = require("gulp-concat");
-// const cleanCSS = require("gulp-clean-css");
 const del = require("del");
 const uglify = require("gulp-uglify-es").default;
-// const LessAutoPrefix = require("less-plugin-autoprefix");
-// const autoprefix = new LessAutoPrefix({
-//     browsers: ["last 2 versions"]
-// });
 
 // cleanup
 function clean(cb) {
-    // delete all existing assets and html to prevent caching issues
     del(DIST + "*");
     cb();
 }
@@ -33,7 +27,7 @@ function build(cb) {
     // move images
     gulp
         .src(SRC + "img/**/*.png")
-        .pipe(gulp.dest(DIST));
+        .pipe(gulp.dest(DIST + "img"));
     // combine/compile and move less files
     gulp
         .src(SRC + "less/index.less")
